@@ -1,0 +1,417 @@
+@import url(common.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+
+/* ////////////////////////////////////////////////////////////////선생님 피드백 : 각 섹션의 제목은 로고 크기만큼 크게 */
+html{
+  scroll-behavior: smooth;
+}
+body{
+  text-transform: capitalize;
+}
+
+h2{
+  font-size: 40px;
+}
+.top{
+  position: fixed;
+  right: 100px;
+  bottom: 50px;
+}
+.top a{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  box-shadow: 0 1px 1px lightgray;
+}
+.top a:hover{
+  background-color: crimson;
+}
+.top a:before{
+  content: '\f062';
+  position: absolute;
+  font-family: fontawesome;
+  font-size: 40px;
+  color: dimgray;
+  transform: translateX(-50%);
+}
+
+/* __________________________________header */
+header{
+  width: 100%;
+  height: 100px;
+  background-color: #000;
+  position: fixed;
+  z-index: 10000000;
+}
+#header-in{
+  width: 1200px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.logo{
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+}
+.gnb ul{
+  display: flex;
+  color: #fff;
+}
+.gnb ul li{
+  margin: 0 20px;
+  font-size: 25px;
+}
+.gnb ul li:hover{
+  text-decoration: underline;
+
+}
+/* _______________________________________main */
+main{
+  width: 100%;
+  height: 700px;
+  background: url(../image/main.png) no-repeat center center;
+  background-size: cover;
+}
+
+/* ____________________________________section */
+/* ///////////////////////////////////////////////////////////////////////선생님 피드백 : 섹션들의 간격 더 넓힐것 */
+section{
+  width: 100%;
+  background-color: #ECF0F1;
+}
+
+/* section_new */
+#new{
+  width: 1200px;
+  margin: auto;
+  padding: 100px 0;
+}
+#new h2{
+  margin-bottom: 50px;
+}
+.new-in{
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+.new-item{
+  width: 300px;
+  height: 390px;
+  position: relative;
+}
+.new-caption{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+.new-caption h4{
+  margin-bottom: 10px;
+}
+.new-item:hover .new-caption{
+  opacity: 1;
+}
+
+/* section_shop */
+#shop{
+  width: 1200px;
+  height: 600px;
+  margin: auto;
+  padding: 100px 0;
+  position: relative;
+}
+#shop:before{
+  content: '';
+  position: absolute;
+  width: 600px;
+  border: 1px solid #BDC3C7;
+  top: -25px;
+}
+#shop h2{
+  margin-bottom: 50px;
+}
+.sh-content{
+  height: 550px;
+  position: relative;
+}
+.sh-content input[type="radio"]{
+  display: none;
+}
+.sh-content label{
+  display: block;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.sh-content-img{ 
+  position: absolute;
+  top: 0;
+  left: 300px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.sh-btn button{
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: orange;
+  border: none;
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+input[id="sh-tab1"]:checked ~ label[for="sh-tab1"],
+input[id="sh-tab2"]:checked ~ label[for="sh-tab2"],
+input[id="sh-tab3"]:checked ~ label[for="sh-tab3"],
+input[id="sh-tab4"]:checked ~ label[for="sh-tab4"],
+input[id="sh-tab5"]:checked ~ label[for="sh-tab5"],
+input[id="sh-tab6"]:checked ~ label[for="sh-tab6"],
+input[id="sh-tab7"]:checked ~ label[for="sh-tab7"],
+input[id="sh-tab8"]:checked ~ label[for="sh-tab8"],
+input[id="sh-tab9"]:checked ~ label[for="sh-tab9"],
+input[id="sh-tab10"]:checked ~ label[for="sh-tab10"]{
+  font-weight: bold;
+}
+
+input[id="sh-tab1"]:checked ~ .sh-slide1,
+input[id="sh-tab2"]:checked ~ .sh-slide2,
+input[id="sh-tab3"]:checked ~ .sh-slide3,
+input[id="sh-tab4"]:checked ~ .sh-slide4,
+input[id="sh-tab5"]:checked ~ .sh-slide5,
+input[id="sh-tab6"]:checked ~ .sh-slide6,
+input[id="sh-tab7"]:checked ~ .sh-slide7,
+input[id="sh-tab8"]:checked ~ .sh-slide8,
+input[id="sh-tab9"]:checked ~ .sh-slide9,
+input[id="sh-tab10"]:checked ~ .sh-slide10{
+  opacity: 1;
+}
+
+/* section_gift guide */
+#gift{
+  width: 1200px;
+  height: 950px;
+  margin: auto;
+  padding: 100px 0;
+  position: relative;
+}
+#gift::before{
+  content: '';
+  position: absolute;
+  width: 600px;
+  border: 1px solid #BDC3C7;
+  top: -25px;
+}
+#gift h2{
+  margin-bottom: 50px;
+}
+input[name="tabmenu"]{
+  display: none;
+}
+.input-box{
+  display: inline-block;
+  padding: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px lightcoral;
+}
+.gift-in{
+  width: 700px;
+  height: 600px;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.content{
+  font-size: 0;
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+input[id=tab1]:checked ~ .slide01,
+input[id=tab2]:checked ~ .slide02,
+input[id=tab3]:checked ~ .slide03,
+input[id=tab4]:checked ~ .slide04{
+  /* display: block; */
+  opacity: 1;
+}
+input[id=tab1]:checked ~ label[for="tab1"],
+input[id=tab2]:checked ~ label[for="tab2"],
+input[id=tab3]:checked ~ label[for="tab3"],
+input[id=tab4]:checked ~ label[for="tab4"]{
+  font-weight: bold;
+  background-color: gold;
+}
+
+/* section_foundawtion */
+#foundawtion{
+  width: 1200px;
+  padding: 100px 0;
+  margin: auto;
+  position: relative;
+}
+#foundawtion:before{
+  content: '';
+  position: absolute;
+  width: 600px;
+  border: 1px solid #BDC3C7;
+  top: -25px;
+}
+#foundawtion h2{
+  margin-bottom: 25px;
+}
+.fo-caption{
+  display: flex;
+}
+.fo-caption-img{
+  flex: 1;
+}
+.fo-caption-img img{
+  border-radius: 0 50px 0 50px;
+}
+.fo-caption-content{
+  padding: 25px;
+  flex: 2;
+  position: relative;
+}
+.fo-caption-content p,
+.fo-caption-content a{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fo-caption-content a{
+  top: 80%;
+  display: inline-block;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 30px;
+}
+.fo-caption-content a:hover{
+  font-weight: bold;
+}
+
+/* section_about */
+/* //////////////////////////////////////////////////////선생님 피드백 : 애들을 일열로 세우지 말고, 2행 2열로 만들고, 호버하기 전에는 내용 안나오게 하고, 호버할때 내용 나오게. 내용 나올때는 직사각형 모양 아니고 밑에는 약간 라운드 준다. 그리고 호버 하기 전에는 텅텅 비어보일것 같으니 무언가로 채워바라.....  */
+#about{
+  border: 1px solid #000;
+  width: 1200px;
+  margin: auto;
+  padding: 100px 0;
+  position: relative;
+}
+#about:before{
+  content: '';
+  position: absolute;
+  width: 600px;
+  border: 1px solid #BDC3C7;
+  top: -25px;
+}
+#about h2{
+  margin-bottom: 50px;
+}
+.about-us{display: flex;}
+.ab-container{
+  border: 1px solid #000;
+  width: 600px;
+  height: 220px;
+  position: relative;
+
+}
+.ab-title, .ab-ans{
+  position: absolute;
+  width: 600px; 
+  height: 200px;
+}
+.ab-title{
+  font-size: 25px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.about-us:nth-child(1) .ab-container:nth-child(1) .ab-title:before{
+  content: '\e94c';
+}
+.about-us:nth-child(1) .ab-container:nth-child(2) .ab-title:before{
+  content: '\f233';
+}
+.about-us:nth-child(2) .ab-container:nth-child(1) .ab-title:before{
+  content: '\f8d9';
+}
+.about-us:nth-child(2) .ab-container:nth-child(2) .ab-title:before{
+  content: '\ea35';
+}
+
+/* ____________________________________footer */
+footer{
+  background-color: darkgrey;
+}
+.footer-in{
+  width: 1200px;
+  margin: auto;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.foot-gnb li{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.foot-search h3{
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.foot-search form{
+  font-size: 0;
+}
+.foot-search form input,
+.foot-search form button{
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+}
+.foot-search form input{
+  width: 250px;
+  text-indent: 20px;
+  font-size: 18px;
+  background-color: transparent;
+}
+.foot-search form button{
+  background-color: transparent;
+  border: none;
+  transform: translateY(5px);
+}
+.foot-sns{
+  position: relative;
+  top: 100px;
+}
+.foot-sns i{
+  margin-right: 5px;
+}
+.foot-sns address{
+  margin-top: 10px;
+}
